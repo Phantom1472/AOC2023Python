@@ -6,7 +6,7 @@ from aocd import get_data
 def part1(lines):
     total = 0
     for line in lines:
-        all_digits = re.findall('\d', line)
+        all_digits = re.findall(r'\d', line)
         total += int(f'{all_digits[0]}{all_digits[-1]}')
     return total
 
@@ -18,7 +18,7 @@ def part2(lines):
     total = 0
     for line in lines:
         words_and_digits = re.findall(words_regex, line)
-        # words_and_digits = [word_to_digit.get(word_or_digit, word_or_digit) for word_or_digit in words_and_digits]
+        words_and_digits = [word_to_digit.get(word_or_digit, word_or_digit) for word_or_digit in words_and_digits]
         total += int(f'{words_and_digits[0]}{words_and_digits[-1]}')
     return total
 
